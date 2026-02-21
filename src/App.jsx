@@ -20,7 +20,7 @@ function Contenido() {
   useEffect(()=>{
     const c = localStorage.getItem("ultimaCiudad");
     if (c) buscar(c);
-  },[buscar]);
+  },[]);
 
   //Tema automatico segun clima
   useEffect(()=>{
@@ -28,7 +28,7 @@ function Contenido() {
 
     if(clima.weather[0].main === "Clear") setTema("claro");
     else setTema("oscuro");
-  },[clima,setTema]);
+  },[clima]);
 
   return(
     <div className={`app ${tema}`}>
